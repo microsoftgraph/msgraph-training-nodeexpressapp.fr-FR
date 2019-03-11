@@ -1,0 +1,3 @@
+# <a name="completed-module-create-a-nodejs-express-web-app"></a>Module terminé: créer une application Web Express node. js Express
+
+La version du projet dans ce répertoire reflète l'exécution du didacticiel via [Create a node. js Express Web App](https://docs.microsoft.com/graph/training/node-tutorial?tutorial-step=1). Si vous utilisez cette version du projet, vous devez effectuer le reste du didacticiel en commençant par [enregistrer l'application dans le portail](https://docs.microsoft.com/graph/training/node-tutorial?tutorial-step=2).
