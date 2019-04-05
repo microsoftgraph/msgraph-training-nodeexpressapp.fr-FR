@@ -8,12 +8,12 @@ Ce didacticiel vous apprend à créer une application Web node. js Express qui u
 > - Téléchargez le [démarrage rapide de node. js](https://developer.microsoft.com/graph/quick-start?platform=option-node) pour obtenir du code de travail en quelques minutes.
 > - Téléchargez ou clonez le [référentiel GitHub](https://github.com/microsoftgraph/msgraph-training-nodeexpressapp).
 
-## <a name="prerequisites"></a>Conditions requises
+## <a name="prerequisites"></a>Conditions préalables
 
 Avant de commencer cette démonstration, [node. js](https://nodejs.org) doit être installé sur votre ordinateur de développement. Si vous n'avez pas node. js, consultez le lien précédent pour obtenir les options de téléchargement.
 
 > [!NOTE]
-> Ce didacticiel a été écrit avec le nœud version 10.7.0. Les étapes de ce guide peuvent fonctionner avec d'autres versions, mais cela n'a pas été testé.
+> Ce didacticiel a été écrit avec le nœud version 10.15.3. Les étapes de ce guide peuvent fonctionner avec d'autres versions, mais cela n'a pas été testé.
 
 ## <a name="feedback"></a>Commentaires
 
