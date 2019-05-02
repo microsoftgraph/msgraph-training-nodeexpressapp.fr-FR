@@ -1,10 +1,10 @@
 <!-- markdownlint-disable MD002 MD041 -->
 
-<span data-ttu-id="7ec52-101">Dans cet exercice, vous allez incorporer Microsoft Graph dans l'application.</span><span class="sxs-lookup"><span data-stu-id="7ec52-101">In this exercise you will incorporate the Microsoft Graph into the application.</span></span> <span data-ttu-id="7ec52-102">Pour cette application, vous allez utiliser la bibliothèque [Microsoft-Graph-client](https://github.com/microsoftgraph/msgraph-sdk-javascript) pour passer des appels à Microsoft Graph.</span><span class="sxs-lookup"><span data-stu-id="7ec52-102">For this application, you will use the [microsoft-graph-client](https://github.com/microsoftgraph/msgraph-sdk-javascript) library to make calls to Microsoft Graph.</span></span>
+<span data-ttu-id="ab60e-101">Dans cet exercice, vous allez incorporer Microsoft Graph dans l’application.</span><span class="sxs-lookup"><span data-stu-id="ab60e-101">In this exercise you will incorporate the Microsoft Graph into the application.</span></span> <span data-ttu-id="ab60e-102">Pour cette application, vous allez utiliser la bibliothèque [Microsoft-Graph-client](https://github.com/microsoftgraph/msgraph-sdk-javascript) pour passer des appels à Microsoft Graph.</span><span class="sxs-lookup"><span data-stu-id="ab60e-102">For this application, you will use the [microsoft-graph-client](https://github.com/microsoftgraph/msgraph-sdk-javascript) library to make calls to Microsoft Graph.</span></span>
 
-## <a name="get-calendar-events-from-outlook"></a><span data-ttu-id="7ec52-103">Obtenir des événements de calendrier à partir d'Outlook</span><span class="sxs-lookup"><span data-stu-id="7ec52-103">Get calendar events from Outlook</span></span>
+## <a name="get-calendar-events-from-outlook"></a><span data-ttu-id="ab60e-103">Obtenir des événements de calendrier à partir d’Outlook</span><span class="sxs-lookup"><span data-stu-id="ab60e-103">Get calendar events from Outlook</span></span>
 
-<span data-ttu-id="7ec52-104">Commencez par ajouter une nouvelle méthode au `./graph.js` fichier pour obtenir les événements à partir du calendrier.</span><span class="sxs-lookup"><span data-stu-id="7ec52-104">Start by adding a new method to the `./graph.js` file to get the events from the calendar.</span></span> <span data-ttu-id="7ec52-105">Ajoutez la fonction suivante à l' `module.exports` intérieur `./graph.js`du dans.</span><span class="sxs-lookup"><span data-stu-id="7ec52-105">Add the following function inside the `module.exports` in `./graph.js`.</span></span>
+<span data-ttu-id="ab60e-104">Commencez par ajouter une nouvelle méthode au `./graph.js` fichier pour obtenir les événements à partir du calendrier.</span><span class="sxs-lookup"><span data-stu-id="ab60e-104">Start by adding a new method to the `./graph.js` file to get the events from the calendar.</span></span> <span data-ttu-id="ab60e-105">Ajoutez la fonction suivante à l' `module.exports` intérieur `./graph.js`du dans.</span><span class="sxs-lookup"><span data-stu-id="ab60e-105">Add the following function inside the `module.exports` in `./graph.js`.</span></span>
 
 ```js
 getEvents: async function(accessToken) {
@@ -20,13 +20,13 @@ getEvents: async function(accessToken) {
 }
 ```
 
-<span data-ttu-id="7ec52-106">Examinez ce que fait ce code.</span><span class="sxs-lookup"><span data-stu-id="7ec52-106">Consider what this code is doing.</span></span>
+<span data-ttu-id="ab60e-106">Examinez ce que fait ce code.</span><span class="sxs-lookup"><span data-stu-id="ab60e-106">Consider what this code is doing.</span></span>
 
-- <span data-ttu-id="7ec52-107">L'URL qui sera appelée est `/me/events`.</span><span class="sxs-lookup"><span data-stu-id="7ec52-107">The URL that will be called is `/me/events`.</span></span>
-- <span data-ttu-id="7ec52-108">La `select` méthode limite les champs renvoyés pour chaque événement à ceux que l'affichage utilise réellement.</span><span class="sxs-lookup"><span data-stu-id="7ec52-108">The `select` method limits the fields returned for each events to just those the view will actually use.</span></span>
-- <span data-ttu-id="7ec52-109">La `orderby` méthode trie les résultats en fonction de la date et de l'heure de leur création, avec l'élément le plus récent en premier.</span><span class="sxs-lookup"><span data-stu-id="7ec52-109">The `orderby` method sorts the results by the date and time they were created, with the most recent item being first.</span></span>
+- <span data-ttu-id="ab60e-107">L’URL qui sera appelée est `/me/events`.</span><span class="sxs-lookup"><span data-stu-id="ab60e-107">The URL that will be called is `/me/events`.</span></span>
+- <span data-ttu-id="ab60e-108">La `select` méthode limite les champs renvoyés pour chaque événement à ceux que l’affichage utilise réellement.</span><span class="sxs-lookup"><span data-stu-id="ab60e-108">The `select` method limits the fields returned for each events to just those the view will actually use.</span></span>
+- <span data-ttu-id="ab60e-109">La `orderby` méthode trie les résultats en fonction de la date et de l’heure de leur création, avec l’élément le plus récent en premier.</span><span class="sxs-lookup"><span data-stu-id="ab60e-109">The `orderby` method sorts the results by the date and time they were created, with the most recent item being first.</span></span>
 
-<span data-ttu-id="7ec52-110">Créez un fichier dans le `./routes` répertoire nommé `calendar.js`et ajoutez le code suivant.</span><span class="sxs-lookup"><span data-stu-id="7ec52-110">Create a new file in the `./routes` directory named `calendar.js`, and add the following code.</span></span>
+<span data-ttu-id="ab60e-110">Créez un fichier dans le `./routes` répertoire nommé `calendar.js`et ajoutez le code suivant.</span><span class="sxs-lookup"><span data-stu-id="ab60e-110">Create a new file in the `./routes` directory named `calendar.js`, and add the following code.</span></span>
 
 ```js
 var express = require('express');
@@ -70,23 +70,23 @@ router.get('/',
 module.exports = router;
 ```
 
-<span data-ttu-id="7ec52-111">Mettre `./app.js` à jour pour utiliser ce nouvel itinéraire.</span><span class="sxs-lookup"><span data-stu-id="7ec52-111">Update `./app.js` to use this new route.</span></span> <span data-ttu-id="7ec52-112">Ajoutez la ligne suivante **avant** la `var app = express();` ligne.</span><span class="sxs-lookup"><span data-stu-id="7ec52-112">Add the following line **before** the `var app = express();` line.</span></span>
+<span data-ttu-id="ab60e-111">Mettre `./app.js` à jour pour utiliser ce nouvel itinéraire.</span><span class="sxs-lookup"><span data-stu-id="ab60e-111">Update `./app.js` to use this new route.</span></span> <span data-ttu-id="ab60e-112">Ajoutez la ligne suivante **avant** la `var app = express();` ligne.</span><span class="sxs-lookup"><span data-stu-id="ab60e-112">Add the following line **before** the `var app = express();` line.</span></span>
 
 ```js
 var calendarRouter = require('./routes/calendar');
 ```
 
-<span data-ttu-id="7ec52-113">Ajoutez ensuite la ligne suivante **après** la `app.use('/auth', authRouter);` ligne.</span><span class="sxs-lookup"><span data-stu-id="7ec52-113">Then add the following line **after** the `app.use('/auth', authRouter);` line.</span></span>
+<span data-ttu-id="ab60e-113">Ajoutez ensuite la ligne suivante **après** la `app.use('/auth', authRouter);` ligne.</span><span class="sxs-lookup"><span data-stu-id="ab60e-113">Then add the following line **after** the `app.use('/auth', authRouter);` line.</span></span>
 
 ```js
 app.use('/calendar', calendarRouter);
 ```
 
-<span data-ttu-id="7ec52-114">À présent, vous pouvez le tester.</span><span class="sxs-lookup"><span data-stu-id="7ec52-114">Now you can test this.</span></span> <span data-ttu-id="7ec52-115">Connectez-vous, puis cliquez sur le lien **calendrier** dans la barre de navigation.</span><span class="sxs-lookup"><span data-stu-id="7ec52-115">Sign in and click the **Calendar** link in the nav bar.</span></span> <span data-ttu-id="7ec52-116">Si tout fonctionne, vous devez voir un vidage JSON des événements sur le calendrier de l'utilisateur.</span><span class="sxs-lookup"><span data-stu-id="7ec52-116">If everything works, you should see a JSON dump of events on the user's calendar.</span></span>
+<span data-ttu-id="ab60e-114">À présent, vous pouvez le tester.</span><span class="sxs-lookup"><span data-stu-id="ab60e-114">Now you can test this.</span></span> <span data-ttu-id="ab60e-115">Connectez-vous, puis cliquez sur le lien **calendrier** dans la barre de navigation.</span><span class="sxs-lookup"><span data-stu-id="ab60e-115">Sign in and click the **Calendar** link in the nav bar.</span></span> <span data-ttu-id="ab60e-116">Si tout fonctionne, vous devez voir un vidage JSON des événements sur le calendrier de l’utilisateur.</span><span class="sxs-lookup"><span data-stu-id="ab60e-116">If everything works, you should see a JSON dump of events on the user's calendar.</span></span>
 
-## <a name="display-the-results"></a><span data-ttu-id="7ec52-117">Afficher les résultats</span><span class="sxs-lookup"><span data-stu-id="7ec52-117">Display the results</span></span>
+## <a name="display-the-results"></a><span data-ttu-id="ab60e-117">Afficher les résultats</span><span class="sxs-lookup"><span data-stu-id="ab60e-117">Display the results</span></span>
 
-<span data-ttu-id="7ec52-118">À présent, vous pouvez ajouter une vue pour afficher les résultats de manière plus conviviale.</span><span class="sxs-lookup"><span data-stu-id="7ec52-118">Now you can add a view to display the results in a more user-friendly manner.</span></span> <span data-ttu-id="7ec52-119">Tout d'abord, ajoutez le code `./app.js` suivant dans `app.set('view engine', 'hbs');` **après** la ligne.</span><span class="sxs-lookup"><span data-stu-id="7ec52-119">First, add the following code in `./app.js` **after** the `app.set('view engine', 'hbs');` line.</span></span>
+<span data-ttu-id="ab60e-118">À présent, vous pouvez ajouter une vue pour afficher les résultats de manière plus conviviale.</span><span class="sxs-lookup"><span data-stu-id="ab60e-118">Now you can add a view to display the results in a more user-friendly manner.</span></span> <span data-ttu-id="ab60e-119">Tout d’abord, ajoutez le code `./app.js` suivant dans `app.set('view engine', 'hbs');` **après** la ligne.</span><span class="sxs-lookup"><span data-stu-id="ab60e-119">First, add the following code in `./app.js` **after** the `app.set('view engine', 'hbs');` line.</span></span>
 
 ```js
 var hbs = require('hbs');
@@ -97,9 +97,9 @@ hbs.registerHelper('eventDateTime', function(dateTime){
 });
 ```
 
-<span data-ttu-id="7ec52-120">Cela implémente une [assistance](http://handlebarsjs.com/#helpers) de guidon pour mettre en forme la date ISO 8601 renvoyée par Microsoft Graph en une solution plus conviviale.</span><span class="sxs-lookup"><span data-stu-id="7ec52-120">This implements a [Handlebars helper](http://handlebarsjs.com/#helpers) to format the ISO 8601 date returned by Microsoft Graph into something more human-friendly.</span></span>
+<span data-ttu-id="ab60e-120">Cela implémente une [assistance](http://handlebarsjs.com/#helpers) de guidon pour mettre en forme la date ISO 8601 renvoyée par Microsoft Graph en une solution plus conviviale.</span><span class="sxs-lookup"><span data-stu-id="ab60e-120">This implements a [Handlebars helper](http://handlebarsjs.com/#helpers) to format the ISO 8601 date returned by Microsoft Graph into something more human-friendly.</span></span>
 
-<span data-ttu-id="7ec52-121">Créez un fichier dans le `./views` répertoire nommé `calendar.hbs` et ajoutez le code suivant.</span><span class="sxs-lookup"><span data-stu-id="7ec52-121">Create a new file in the `./views` directory named `calendar.hbs` and add the following code.</span></span>
+<span data-ttu-id="ab60e-121">Créez un fichier dans le `./views` répertoire nommé `calendar.hbs` et ajoutez le code suivant.</span><span class="sxs-lookup"><span data-stu-id="ab60e-121">Create a new file in the `./views` directory named `calendar.hbs` and add the following code.</span></span>
 
 ```html
 <h1>Calendar</h1>
@@ -125,7 +125,7 @@ hbs.registerHelper('eventDateTime', function(dateTime){
 </table>
 ```
 
-<span data-ttu-id="7ec52-122">Cela permet d'exécuter une boucle dans une collection d'événements et d'ajouter une ligne de tableau pour chacun d'eux.</span><span class="sxs-lookup"><span data-stu-id="7ec52-122">That will loop through a collection of events and add a table row for each one.</span></span> <span data-ttu-id="7ec52-123">À présent, mettez à `./routes/calendar.js` jour l'itinéraire dans pour utiliser cet affichage.</span><span class="sxs-lookup"><span data-stu-id="7ec52-123">Now update the route in `./routes/calendar.js` to use this view.</span></span> <span data-ttu-id="7ec52-124">Remplacez l'itinéraire existant par le code suivant.</span><span class="sxs-lookup"><span data-stu-id="7ec52-124">Replace the existing route with the following code.</span></span>
+<span data-ttu-id="ab60e-122">Cela permet d’exécuter une boucle dans une collection d’événements et d’ajouter une ligne de tableau pour chacun d’eux.</span><span class="sxs-lookup"><span data-stu-id="ab60e-122">That will loop through a collection of events and add a table row for each one.</span></span> <span data-ttu-id="ab60e-123">À présent, mettez à `./routes/calendar.js` jour l’itinéraire dans pour utiliser cet affichage.</span><span class="sxs-lookup"><span data-stu-id="ab60e-123">Now update the route in `./routes/calendar.js` to use this view.</span></span> <span data-ttu-id="ab60e-124">Remplacez l’itinéraire existant par le code suivant.</span><span class="sxs-lookup"><span data-stu-id="ab60e-124">Replace the existing route with the following code.</span></span>
 
 ```js
 router.get('/',
@@ -168,6 +168,6 @@ router.get('/',
 );
 ```
 
-<span data-ttu-id="7ec52-125">Enregistrez vos modifications, redémarrez le serveur et connectez-vous à l'application.</span><span class="sxs-lookup"><span data-stu-id="7ec52-125">Save your changes, restart the server, and sign in to the app.</span></span> <span data-ttu-id="7ec52-126">Cliquez sur le lien **calendrier** et l'application doit maintenant afficher un tableau d'événements.</span><span class="sxs-lookup"><span data-stu-id="7ec52-126">Click on the **Calendar** link and the app should now render a table of events.</span></span>
+<span data-ttu-id="ab60e-125">Enregistrez vos modifications, redémarrez le serveur et connectez-vous à l’application.</span><span class="sxs-lookup"><span data-stu-id="ab60e-125">Save your changes, restart the server, and sign in to the app.</span></span> <span data-ttu-id="ab60e-126">Cliquez sur le lien **calendrier** et l’application doit maintenant afficher un tableau d’événements.</span><span class="sxs-lookup"><span data-stu-id="ab60e-126">Click on the **Calendar** link and the app should now render a table of events.</span></span>
 
-![Capture d'écran du tableau des événements](./images/add-msgraph-01.png)
+![Capture d’écran du tableau des événements](./images/add-msgraph-01.png)
