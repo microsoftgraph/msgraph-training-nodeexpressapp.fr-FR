@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD002 MD041 -->
 
-Dans cet exercice, vous allez étendre l'application de l'exercice précédent pour prendre en charge l'authentification avec Azure AD. Cela est nécessaire pour obtenir le jeton d'accès OAuth nécessaire pour appeler Microsoft Graph. Dans cette étape, vous allez intégrer la bibliothèque [Passport-Azure-ad](https://github.com/AzureAD/passport-azure-ad) dans l'application.
+Dans cet exercice, vous allez étendre l’application de l’exercice précédent pour prendre en charge l’authentification avec Azure AD. Cela est nécessaire pour obtenir le jeton d’accès OAuth nécessaire pour appeler Microsoft Graph. Dans cette étape, vous allez intégrer la bibliothèque [Passport-Azure-ad](https://github.com/AzureAD/passport-azure-ad) dans l’application.
 
 Créez un fichier nommé `.env` file à la racine de votre application et ajoutez le code suivant.
 
@@ -15,10 +15,10 @@ OAUTH_AUTHORIZE_ENDPOINT=/oauth2/v2.0/authorize
 OAUTH_TOKEN_ENDPOINT=/oauth2/v2.0/token
 ```
 
-Remplacez `YOUR APP ID HERE` par l'ID de l'application dans le portail d'inscription de `YOUR APP SECRET HERE` l'application et remplacez par le mot de passe que vous avez généré.
+Remplacez `YOUR APP ID HERE` par l’ID de l’application dans le portail d’inscription de `YOUR APP SECRET HERE` l’application et remplacez par le mot de passe que vous avez généré.
 
 > [!IMPORTANT]
-> Si vous utilisez le contrôle de code source tel que git, il est maintenant recommandé d'exclure le `.env` fichier du contrôle de code source afin d'éviter une fuite accidentelle de votre ID d'application et de votre mot de passe.
+> Si vous utilisez le contrôle de code source tel que git, il est maintenant recommandé d’exclure le `.env` fichier du contrôle de code source afin d’éviter une fuite accidentelle de votre ID d’application et de votre mot de passe.
 
 Ouvrez `./app.js` et ajoutez la ligne suivante en haut du fichier pour charger le `.env` fichier.
 
@@ -83,9 +83,9 @@ passport.use(new OIDCStrategy(
 ));
 ```
 
-Ce code initialise la bibliothèque [Passport. js](http://www.passportjs.org/) pour utiliser la `passport-azure-ad` Bibliothèque et la configure avec l'ID d'application et le mot de passe de l'application.
+Ce code initialise la bibliothèque [Passport. js](http://www.passportjs.org/) pour utiliser la `passport-azure-ad` Bibliothèque et la configure avec l’ID d’application et le mot de passe de l’application.
 
-À présent, `passport` transmettez l'objet à l'application expresse. Localisez la `app.use('/', indexRouter);` ligne `./app.js`dans. Insérez le code suivant **avant** cette ligne.
+À présent, `passport` transmettez l’objet à l’application expresse. Localisez la `app.use('/', indexRouter);` ligne `./app.js`dans. Insérez le code suivant **avant** cette ligne.
 
 ```js
 // Initialize passport
@@ -149,11 +149,11 @@ module.exports = router;
 
 Cette définition définit un routeur avec trois itinéraires `signin`: `callback`, et `signout`.
 
-L' `signin` itinéraire appelle la `passport.authenticate` méthode, ce qui entraîne la redirection de l'application vers la page de connexion Azure.
+L' `signin` itinéraire appelle la `passport.authenticate` méthode, ce qui entraîne la redirection de l’application vers la page de connexion Azure.
 
-L' `callback` itinéraire est l'endroit où Azure redirige une fois la connexion terminée. Le code appelle de `passport.authenticate` nouveau la méthode, ce `passport-azure-ad` qui entraîne la demande d'un jeton d'accès. Une fois le jeton obtenu, le gestionnaire suivant est appelé, qui redirige vers la page d'accueil avec le jeton d'accès dans la valeur d'erreur temporaire. Nous allons l'utiliser pour vérifier que notre connexion fonctionne avant de poursuivre. Avant de tester, nous devons configurer l'application Express de sorte qu'elle utilise le nouveau `./routes/auth.js`routeur à partir de.
+L' `callback` itinéraire est l’endroit où Azure redirige une fois la connexion terminée. Le code appelle de `passport.authenticate` nouveau la méthode, ce `passport-azure-ad` qui entraîne la demande d’un jeton d’accès. Une fois le jeton obtenu, le gestionnaire suivant est appelé, qui redirige vers la page d’accueil avec le jeton d’accès dans la valeur d’erreur temporaire. Nous allons l’utiliser pour vérifier que notre connexion fonctionne avant de poursuivre. Avant de tester, nous devons configurer l’application Express de sorte qu’elle utilise le nouveau `./routes/auth.js`routeur à partir de.
 
-La `signout` méthode déconnecte l'utilisateur et détruit la session.
+La `signout` méthode déconnecte l’utilisateur et détruit la session.
 
 Insérez le code suivant **avant** la `var app = express();` ligne.
 
@@ -167,9 +167,9 @@ Insérez ensuite le code suivant **après** la `app.use('/', indexRouter);` lign
 app.use('/auth', authRouter);
 ```
 
-Démarrez le serveur et accédez à `https://localhost:3000`. Cliquez sur le bouton de connexion et vous devez être redirigé vers `https://login.microsoftonline.com`. Connectez-vous avec votre compte Microsoft et acceptez les autorisations demandées. Le navigateur redirige vers l'application en affichant le jeton.
+Démarrez le serveur et accédez à `https://localhost:3000`. Cliquez sur le bouton de connexion et vous devez être redirigé vers `https://login.microsoftonline.com`. Connectez-vous avec votre compte Microsoft et acceptez les autorisations demandées. Le navigateur redirige vers l’application en affichant le jeton.
 
-### <a name="get-user-details"></a>Obtenir les détails de l'utilisateur
+### <a name="get-user-details"></a>Obtenir les détails de l’utilisateur
 
 Commencez par créer un fichier qui contiendra tous vos appels Microsoft Graph. Créez un fichier à la racine du projet nommé `graph.js` et ajoutez le code suivant.
 
@@ -201,7 +201,7 @@ function getAuthenticatedClient(accessToken) {
 
 Cette méthode exporte la `getUserDetails` fonction, qui utilise le kit de développement logiciel `/me` (SDK) Microsoft Graph pour appeler le point de terminaison et renvoyer le résultat.
 
-Mettez à `signInComplete` jour la `/app.s` méthode dans pour appeler cette fonction. Tout d'abord, ajoutez `require` les instructions suivantes en haut du fichier.
+Mettez à `signInComplete` jour la `/app.s` méthode dans pour appeler cette fonction. Tout d’abord, ajoutez `require` les instructions suivantes en haut du fichier.
 
 ```js
 var graph = require('./graph');
@@ -232,9 +232,9 @@ async function signInComplete(iss, sub, profile, accessToken, refreshToken, para
 }
 ```
 
-Le nouveau code met à jour le `profile` passeport fourni pour ajouter une `email` propriété à l'aide des données renvoyées par Microsoft Graph.
+Le nouveau code met à jour le `profile` passeport fourni pour ajouter une `email` propriété à l’aide des données renvoyées par Microsoft Graph.
 
-Enfin, ajoutez du code `./app.js` pour charger le profil utilisateur dans la `locals` propriété de la réponse. Cela permet de le mettre à la disposition de toutes les vues dans l'application.
+Enfin, ajoutez du code `./app.js` pour charger le profil utilisateur dans la `locals` propriété de la réponse. Cela permet de le mettre à la disposition de toutes les vues dans l’application.
 
 Ajoutez ce qui **** suit après `app.use(passport.session());` la ligne.
 
@@ -251,11 +251,11 @@ app.use(function(req, res, next) {
 
 ## <a name="storing-the-tokens"></a>Stockage des jetons
 
-Maintenant que vous pouvez obtenir des jetons, il est temps de mettre en œuvre un moyen de les stocker dans l'application. Actuellement, l'application stocke le jeton d'accès brut dans le stockage utilisateur en mémoire. Étant donné qu'il s'agit d'un exemple d'application, par souci de simplicité, vous continuerez à les stocker. Une application réelle utiliserait une solution de stockage sécurisé plus fiable, comme une base de données.
+Maintenant que vous pouvez obtenir des jetons, il est temps de mettre en œuvre un moyen de les stocker dans l’application. Actuellement, l’application stocke le jeton d’accès brut dans le stockage utilisateur en mémoire. Étant donné qu’il s’agit d’un exemple d’application, par souci de simplicité, vous continuerez à les stocker. Une application réelle utiliserait une solution de stockage sécurisé plus fiable, comme une base de données.
 
-Toutefois, le fait de stocker uniquement le jeton d'accès ne vous permet pas de vérifier l'expiration ou d'actualiser le jeton. Pour l'activer, mettez à jour l'exemple pour encapsuler les jetons dans `AccessToken` un objet à `simple-oauth2` partir de la bibliothèque.
+Toutefois, le fait de stocker uniquement le jeton d’accès ne vous permet pas de vérifier l’expiration ou d’actualiser le jeton. Pour l’activer, mettez à jour l’exemple pour encapsuler les jetons dans `AccessToken` un objet à `simple-oauth2` partir de la bibliothèque.
 
-Tout d'abord `./app.js`, dans, ajoutez le code suivant `signInComplete` **avant** la fonction.
+Tout d’abord `./app.js`, dans, ajoutez le code suivant `signInComplete` **avant** la fonction.
 
 ```js
 // Configure simple-oauth2
@@ -300,7 +300,7 @@ async function signInComplete(iss, sub, profile, accessToken, refreshToken, para
 }
 ```
 
-Mettez à `callback` jour l' `./routes/auth.js` itinéraire dans pour `req.flash` supprimer la ligne avec le jeton d'accès. L' `callback` itinéraire doit ressembler à ce qui suit.
+Mettez à `callback` jour l' `./routes/auth.js` itinéraire dans pour `req.flash` supprimer la ligne avec le jeton d’accès. L' `callback` itinéraire doit ressembler à ce qui suit.
 
 ```js
 router.post('/callback',
@@ -319,19 +319,19 @@ router.post('/callback',
 );
 ```
 
-ReDémarrez le serveur et suivez le processus de connexion. Vous devez revenir sur la page d'accueil, mais l'interface utilisateur doit changer pour indiquer que vous êtes connecté.
+Redémarrez le serveur et suivez le processus de connexion. Vous devez revenir sur la page d’accueil, mais l’interface utilisateur doit changer pour indiquer que vous êtes connecté.
 
-![Capture d'écran de la page d'accueil après la connexion](./images/add-aad-auth-01.png)
+![Capture d’écran de la page d’accueil après la connexion](./images/add-aad-auth-01.png)
 
-Cliquez sur Avatar de l'utilisateur dans le coin supérieur droit pour **** accéder au lien Déconnexion. Cliquez **** sur Déconnexion pour réinitialiser la session et revenir à la page d'accueil.
+Cliquez sur Avatar de l’utilisateur dans le coin supérieur droit pour **** accéder au lien Déconnexion. Cliquez **** sur Déconnexion pour réinitialiser la session et revenir à la page d’accueil.
 
-![Capture d'écran du menu déroulant avec le lien déConnexion](./images/add-aad-auth-02.png)
+![Capture d’écran du menu déroulant avec le lien Déconnexion](./images/add-aad-auth-02.png)
 
 ## <a name="refreshing-tokens"></a>Actualisation des jetons
 
-À ce stade, votre application a un jeton d'accès, qui est envoyé `Authorization` dans l'en-tête des appels d'API. Il s'agit du jeton qui permet à l'application d'accéder à Microsoft Graph pour le compte de l'utilisateur.
+À ce stade, votre application a un jeton d’accès, qui est envoyé `Authorization` dans l’en-tête des appels d’API. Il s’agit du jeton qui permet à l’application d’accéder à Microsoft Graph pour le compte de l’utilisateur.
 
-Toutefois, ce jeton est éphémère. Le jeton expire une heure après son émission. C'est ici que le jeton d'actualisation devient utile. Le jeton d'actualisation permet à l'application de demander un nouveau jeton d'accès sans demander à l'utilisateur de se reconnecter.
+Toutefois, ce jeton est éphémère. Le jeton expire une heure après son émission. C’est ici que le jeton d’actualisation devient utile. Le jeton d’actualisation permet à l’application de demander un nouveau jeton d’accès sans demander à l’utilisateur de se reconnecter.
 
 Pour ce faire, créez un fichier à la racine du projet nommé `tokens.js` pour conserver les fonctions de gestion des jetons. Ajoutez le code suivant.
 
@@ -360,4 +360,4 @@ module.exports = {
 };
 ```
 
-Cette méthode vérifie d'abord si le jeton d'accès a expiré ou s'il arrive à expiration. Si c'est le cas, il utilise le jeton d'actualisation pour obtenir de nouveaux jetons, puis il met à jour le cache et renvoie le nouveau jeton d'accès. Vous utiliserez cette méthode chaque fois que vous aurez besoin de récupérer le jeton d'accès.
+Cette méthode vérifie d’abord si le jeton d’accès a expiré ou s’il arrive à expiration. Si c’est le cas, il utilise le jeton d’actualisation pour obtenir de nouveaux jetons, puis il met à jour le cache et renvoie le nouveau jeton d’accès. Vous utiliserez cette méthode chaque fois que vous aurez besoin de récupérer le jeton d’accès.

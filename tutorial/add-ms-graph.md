@@ -1,8 +1,8 @@
 <!-- markdownlint-disable MD002 MD041 -->
 
-Dans cet exercice, vous allez incorporer Microsoft Graph dans l'application. Pour cette application, vous allez utiliser la bibliothèque [Microsoft-Graph-client](https://github.com/microsoftgraph/msgraph-sdk-javascript) pour passer des appels à Microsoft Graph.
+Dans cet exercice, vous allez incorporer Microsoft Graph dans l’application. Pour cette application, vous allez utiliser la bibliothèque [Microsoft-Graph-client](https://github.com/microsoftgraph/msgraph-sdk-javascript) pour passer des appels à Microsoft Graph.
 
-## <a name="get-calendar-events-from-outlook"></a>Obtenir des événements de calendrier à partir d'Outlook
+## <a name="get-calendar-events-from-outlook"></a>Obtenir des événements de calendrier à partir d’Outlook
 
 Commencez par ajouter une nouvelle méthode au `./graph.js` fichier pour obtenir les événements à partir du calendrier. Ajoutez la fonction suivante à l' `module.exports` intérieur `./graph.js`du dans.
 
@@ -22,9 +22,9 @@ getEvents: async function(accessToken) {
 
 Examinez ce que fait ce code.
 
-- L'URL qui sera appelée est `/me/events`.
-- La `select` méthode limite les champs renvoyés pour chaque événement à ceux que l'affichage utilise réellement.
-- La `orderby` méthode trie les résultats en fonction de la date et de l'heure de leur création, avec l'élément le plus récent en premier.
+- L’URL qui sera appelée est `/me/events`.
+- La `select` méthode limite les champs renvoyés pour chaque événement à ceux que l’affichage utilise réellement.
+- La `orderby` méthode trie les résultats en fonction de la date et de l’heure de leur création, avec l’élément le plus récent en premier.
 
 Créez un fichier dans le `./routes` répertoire nommé `calendar.js`et ajoutez le code suivant.
 
@@ -82,11 +82,11 @@ Ajoutez ensuite la ligne suivante **après** la `app.use('/auth', authRouter);` 
 app.use('/calendar', calendarRouter);
 ```
 
-À présent, vous pouvez le tester. Connectez-vous, puis cliquez sur le lien **calendrier** dans la barre de navigation. Si tout fonctionne, vous devez voir un vidage JSON des événements sur le calendrier de l'utilisateur.
+À présent, vous pouvez le tester. Connectez-vous, puis cliquez sur le lien **calendrier** dans la barre de navigation. Si tout fonctionne, vous devez voir un vidage JSON des événements sur le calendrier de l’utilisateur.
 
 ## <a name="display-the-results"></a>Afficher les résultats
 
-À présent, vous pouvez ajouter une vue pour afficher les résultats de manière plus conviviale. Tout d'abord, ajoutez le code `./app.js` suivant dans `app.set('view engine', 'hbs');` **après** la ligne.
+À présent, vous pouvez ajouter une vue pour afficher les résultats de manière plus conviviale. Tout d’abord, ajoutez le code `./app.js` suivant dans `app.set('view engine', 'hbs');` **après** la ligne.
 
 ```js
 var hbs = require('hbs');
@@ -125,7 +125,7 @@ Créez un fichier dans le `./views` répertoire nommé `calendar.hbs` et ajoutez
 </table>
 ```
 
-Cela permet d'exécuter une boucle dans une collection d'événements et d'ajouter une ligne de tableau pour chacun d'eux. À présent, mettez à `./routes/calendar.js` jour l'itinéraire dans pour utiliser cet affichage. Remplacez l'itinéraire existant par le code suivant.
+Cela permet d’exécuter une boucle dans une collection d’événements et d’ajouter une ligne de tableau pour chacun d’eux. À présent, mettez à `./routes/calendar.js` jour l’itinéraire dans pour utiliser cet affichage. Remplacez l’itinéraire existant par le code suivant.
 
 ```js
 router.get('/',
@@ -168,6 +168,6 @@ router.get('/',
 );
 ```
 
-Enregistrez vos modifications, redémarrez le serveur et connectez-vous à l'application. Cliquez sur le lien **calendrier** et l'application doit maintenant afficher un tableau d'événements.
+Enregistrez vos modifications, redémarrez le serveur et connectez-vous à l’application. Cliquez sur le lien **calendrier** et l’application doit maintenant afficher un tableau d’événements.
 
-![Capture d'écran du tableau des événements](./images/add-msgraph-01.png)
+![Capture d’écran du tableau des événements](./images/add-msgraph-01.png)

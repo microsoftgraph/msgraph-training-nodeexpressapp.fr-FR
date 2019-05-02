@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD002 MD041 -->
 
-Dans cet exercice, vous allez utiliser [Express](http://expressjs.com/) pour créer une application Web. Si le générateur Express n'est pas déjà installé, vous pouvez l'installer à partir de votre interface de ligne de commande (CLI) à l'aide de la commande suivante.
+Dans cet exercice, vous allez utiliser [Express](http://expressjs.com/) pour créer une application Web. Si le générateur Express n’est pas déjà installé, vous pouvez l’installer à partir de votre interface de ligne de commande (CLI) à l’aide de la commande suivante.
 
 ```Shell
 npm install express-generator -g
@@ -12,7 +12,7 @@ Ouvrez votre interface CLI, accédez à un répertoire où vous disposez de droi
 express --hbs graph-tutorial
 ```
 
-Le générateur Express crée un nouveau répertoire appelé `graph-tutorial` et génère un squelette d'application Express. Accédez à ce nouveau répertoire et entrez la commande suivante pour installer les dépendances.
+Le générateur Express crée un nouveau répertoire appelé `graph-tutorial` et génère un squelette d’application Express. Accédez à ce nouveau répertoire et entrez la commande suivante pour installer les dépendances.
 
 ```Shell
 npm install
@@ -24,15 +24,15 @@ Une fois que cette commande est terminée, utilisez la commande suivante pour d�
 npm start
 ```
 
-Ouvrez votre navigateur et accédez à `http://localhost:3000`. Si tout fonctionne, le message «Bienvenue dans Express» s'affiche. Si vous ne voyez pas ce message, consultez le [Guide de prise](http://expressjs.com/starter/generator.html)en main de Express.
+Ouvrez votre navigateur et accédez à `http://localhost:3000`. Si tout fonctionne, le message «Bienvenue dans Express» s’affiche. Si vous ne voyez pas ce message, consultez le [Guide de prise](http://expressjs.com/starter/generator.html)en main de Express.
 
 Avant de poursuivre, installez des gemmes supplémentaires que vous utiliserez plus tard:
 
-- [dotenv](https://github.com/motdotla/dotenv) pour le chargement de valeurs à partir d'un fichier. env.
+- [dotenv](https://github.com/motdotla/dotenv) pour le chargement de valeurs à partir d’un fichier. env.
 - [moment](https://github.com/moment/moment/) de mise en forme des valeurs de date/heure.
 - [Connect-Flash](https://github.com/jaredhanson/connect-flash) to Flash error messages in the App.
 - [Express-session](https://github.com/expressjs/session) pour stocker des valeurs dans une session côté serveur en mémoire.
-- [Passport-Azure-ad](https://github.com/AzureAD/passport-azure-ad) pour l'authentification et l'obtention de jetons d'accès.
+- [Passport-Azure-ad](https://github.com/AzureAD/passport-azure-ad) pour l’authentification et l’obtention de jetons d’accès.
 - [simple-oauth2](https://github.com/lelylan/simple-oauth2) pour la gestion des jetons.
 - [Microsoft-Graph-client](https://github.com/microsoftgraph/msgraph-sdk-javascript) pour effectuer des appels à Microsoft Graph.
 
@@ -45,15 +45,15 @@ npm install passport-azure-ad@4.0.0 simple-oauth2@2.2.1 @microsoft/microsoft-gra
 
 >__UTILISATEURS WINDOWS__
 >
->Si vous obtenez le message d'erreur suivant lorsque vous essayez d'installer ces packages:
+>Si vous obtenez le message d’erreur suivant lorsque vous essayez d’installer ces packages:
 >
 > `gyp ERR! stack Error: Can't find Python executable "python", you can set the PYTHON env variable.`
 >
->Exécutez la commande suivante pour installer les outils de génération Windows à l'aide d'une fenêtre de terminal avec élévation de privilèges (administrateur) qui installe les outils de génération VS, ainsi que Python
+>Exécutez la commande suivante pour installer les outils de génération Windows à l’aide d’une fenêtre de terminal avec élévation de privilèges (administrateur) qui installe les outils de génération VS, ainsi que Python
 >
 > `npm install --global --production windows-build-tools`
 
-Maintenant, mettez à jour l'application `connect-flash` pour `express-session` utiliser le et le middleware. Ouvrez le `./app.js` fichier et ajoutez l'instruction `require` suivante en haut du fichier.
+Maintenant, mettez à jour l’application `connect-flash` pour `express-session` utiliser le et le middleware. Ouvrez le `./app.js` fichier et ajoutez l’instruction `require` suivante en haut du fichier.
 
 ```js
 var session = require('express-session');
@@ -93,9 +93,9 @@ app.use(function(req, res, next) {
 });
 ```
 
-## <a name="design-the-app"></a>Concevoir l'application
+## <a name="design-the-app"></a>Concevoir l’application
 
-Commencez par créer la disposition globale de l'application. Ouvrez le `./views/layout.hbs` fichier et remplacez l'intégralité du contenu par le code suivant.
+Commencez par créer la disposition globale de l’application. Ouvrez le `./views/layout.hbs` fichier et remplacez l’intégralité du contenu par le code suivant.
 
 ```html
 <!DOCTYPE html>
@@ -184,7 +184,7 @@ Commencez par créer la disposition globale de l'application. Ouvrez le `./views
 
 Ce code ajoute [bootstrap](http://getbootstrap.com/) pour les styles simples et [font Isard](https://fontawesome.com/) pour certaines icônes simples. Il définit également une disposition globale avec une barre de navigation.
 
-Maintenant, `./public/stylesheets/style.css` ouvrez et remplacez l'intégralité de son contenu par ce qui suit.
+Maintenant, `./public/stylesheets/style.css` ouvrez et remplacez l’intégralité de son contenu par ce qui suit.
 
 ```css
 body {
@@ -231,6 +231,6 @@ router.get('/', function(req, res, next) {
 module.exports = router;
 ```
 
-Enregistrez toutes vos modifications et redémarrez le serveur. À présent, l'application doit être très différente.
+Enregistrez toutes vos modifications et redémarrez le serveur. À présent, l’application doit être très différente.
 
-![Capture d'écran de la page d'accueil repensée](./images/create-app-01.png)
+![Capture d’écran de la page d’accueil repensée](./images/create-app-01.png)
