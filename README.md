@@ -22,6 +22,10 @@ Si vous souhaitez simplement obtenir l’exemple complet généré en suivant ce
 
 - [Projet terminé](Demos/03-add-msgraph)
 
+## <a name="watch-the-module"></a>Regarder le module
+
+Ce module a été enregistré et est disponible dans le canal YouTube de développement Office: [Build node. js Express Apps with Microsoft Graph](https://youtu.be/n6q8Cm-pTYY)
+
 ## <a name="contributors"></a>Collaborateurs
 
 |           Rôles            |                                           Auteur (s)                                           |
@@ -33,13 +37,14 @@ Si vous souhaitez simplement obtenir l’exemple complet généré en suivant ce
 
 ## <a name="version-history"></a>Historique des versions
 
-| Version |       Date       |              Comments              |
-| ------- | ---------------- | ---------------------------------- |
-| 1.4     | 24 mai 2019     | actualisation du contenu 2019Q4             |
-| 1.3     | 17 mai 2019     | Mise à jour des étapes d’inscription de l’application AAD |
-| 1.2     | 10 mars 2019   | actualisation du contenu 2019Q3             |
-| 1.1     | 8 février 2019 | Ajout de diapositives                       |
-| 1.0     | 2018             | Published                          |
+| Version |       Date       |                     Comments                     |
+| ------- | ---------------- | ------------------------------------------------ |
+| 1,5     | 18 juin 2019    | Fichier Lisez-moi mis à jour pour l’enregistrement de captures numériques |
+| 1.4     | 24 mai 2019     | actualisation du contenu 2019Q4                           |
+| 1.3     | 17 mai 2019     | Mise à jour des étapes d’inscription de l’application AAD               |
+| 1.2     | 10 mars 2019   | actualisation du contenu 2019Q3                           |
+| 1.1     | 8 février 2019 | Ajout de diapositives                                     |
+| 1.0     | 2018             | Published                                        |
 
 ## <a name="disclaimer"></a>Clause d’exclusion de responsabilité
 
