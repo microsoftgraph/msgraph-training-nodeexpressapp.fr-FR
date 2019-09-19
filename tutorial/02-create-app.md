@@ -6,7 +6,7 @@ Dans cet exercice, vous allez utiliser [Express](http://expressjs.com/) pour cr�
 npm install express-generator -g
 ```
 
-Ouvrez votre interface CLI, accédez à un répertoire où vous disposez de droits pour créer des fichiers, puis exécutez la commande suivante pour créer une nouvelle application [](http://handlebarsjs.com/) expresse qui utilise des guidés comme moteur de rendu.
+Ouvrez votre interface CLI, accédez à un répertoire où vous disposez de droits pour créer des fichiers, puis exécutez la commande suivante pour créer une nouvelle application expresse qui utilise des [guidés](http://handlebarsjs.com/) comme moteur de rendu.
 
 ```Shell
 express --hbs graph-tutorial
@@ -24,9 +24,9 @@ Une fois que cette commande est terminée, utilisez la commande suivante pour d�
 npm start
 ```
 
-Ouvrez votre navigateur et accédez à `http://localhost:3000`. Si tout fonctionne, le message «Bienvenue dans Express» s’affiche. Si vous ne voyez pas ce message, consultez le [Guide de prise](http://expressjs.com/starter/generator.html)en main de Express.
+Ouvrez votre navigateur et accédez à `http://localhost:3000`. Si tout fonctionne, le message « Bienvenue dans Express » s’affiche. Si vous ne voyez pas ce message, consultez le [Guide de prise](http://expressjs.com/starter/generator.html)en main de Express.
 
-Avant de poursuivre, installez des gemmes supplémentaires que vous utiliserez plus tard:
+Avant de poursuivre, installez des gemmes supplémentaires que vous utiliserez plus tard :
 
 - [dotenv](https://github.com/motdotla/dotenv) pour le chargement de valeurs à partir d’un fichier. env.
 - [moment](https://github.com/moment/moment/) de mise en forme des valeurs de date/heure.
@@ -39,8 +39,8 @@ Avant de poursuivre, installez des gemmes supplémentaires que vous utiliserez p
 Exécutez la commande suivante dans votre interface CLI.
 
 ```Shell
-npm install dotenv@8.0.0 moment@2.24.0 connect-flash@0.1.1 express-session@1.16.1
-npm install passport-azure-ad@4.0.0 simple-oauth2@2.2.1 @microsoft/microsoft-graph-client@1.6.0
+npm install dotenv@8.1.0 moment@2.24.0 connect-flash@0.1.1 express-session@1.16.2
+npm install passport-azure-ad@4.1.0 simple-oauth2@2.4.0 @microsoft/microsoft-graph-client@1.7.0
 ```
 
 > [!TIP]

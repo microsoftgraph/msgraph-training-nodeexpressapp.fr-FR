@@ -201,7 +201,7 @@ function getAuthenticatedClient(accessToken) {
 
 Cette méthode exporte la `getUserDetails` fonction, qui utilise le kit de développement logiciel `/me` (SDK) Microsoft Graph pour appeler le point de terminaison et renvoyer le résultat.
 
-Mettez à `signInComplete` jour la `/app.s` méthode dans pour appeler cette fonction. Tout d’abord, ajoutez `require` les instructions suivantes en haut du fichier.
+Mettez à `signInComplete` jour la `/app.js` méthode dans pour appeler cette fonction. Tout d’abord, ajoutez `require` les instructions suivantes en haut du fichier.
 
 ```js
 var graph = require('./graph');
@@ -323,7 +323,7 @@ Redémarrez le serveur et suivez le processus de connexion. Vous devez revenir s
 
 ![Capture d’écran de la page d’accueil après la connexion](./images/add-aad-auth-01.png)
 
-Cliquez sur Avatar de l’utilisateur dans le coin supérieur droit pour **** accéder au lien Déconnexion. Cliquez **** sur Déconnexion pour réinitialiser la session et revenir à la page d’accueil.
+Cliquez sur Avatar de l’utilisateur dans le coin supérieur droit pour accéder au lien **déconnexion** . Cliquez sur **déconnexion** pour réinitialiser la session et revenir à la page d’accueil.
 
 ![Capture d’écran du menu déroulant avec le lien Déconnexion](./images/add-aad-auth-02.png)
 
