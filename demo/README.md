@@ -4,7 +4,7 @@
 
 Pour exécuter le projet terminé dans ce dossier, vous avez besoin des éléments suivants :
 
-- [Node. js](https://nodejs.org) installé sur votre ordinateur de développement. Si vous n’avez pas node. js, consultez le lien précédent pour obtenir les options de téléchargement. (**Remarque :** ce didacticiel a été écrit avec le nœud version 12.6.1. Les étapes de ce guide peuvent fonctionner avec d’autres versions, mais cela n’a pas été testé.)
+- [Node.js](https://nodejs.org) installé sur votre ordinateur de développement. Si vous n’avez pas Node.js, reportez-vous au lien précédent pour obtenir les options de téléchargement. ( **Remarque :** ce didacticiel a été écrit avec le nœud version 12.6.1. Les étapes de ce guide peuvent fonctionner avec d’autres versions, mais cela n’a pas été testé.)
 - Soit un compte Microsoft personnel avec une boîte aux lettres sur Outlook.com, soit un compte professionnel ou scolaire Microsoft.
 
 Si vous n’avez pas de compte Microsoft, vous disposez de deux options pour obtenir un compte gratuit :
@@ -20,23 +20,19 @@ Si vous n’avez pas de compte Microsoft, vous disposez de deux options pour obt
 
     ![Une capture d’écran des inscriptions d’applications ](/tutorial/images/aad-portal-app-registrations.png)
 
-1. Sélectionnez **Nouvelle inscription**. Sur la page **Inscrire une application**, définissez les valeurs comme suit.
+1. Sélectionnez **Nouvelle inscription**. Sur la page **Inscrire une application** , définissez les valeurs comme suit.
 
     - Définissez le **Nom** sur `Node.js Graph Tutorial`.
     - Définissez les **Types de comptes pris en charge** sur **Comptes dans un annuaire organisationnel et comptes personnels Microsoft**.
-    - Sous **URI de redirection**, définissez la première flèche déroulante sur `Web`, et la valeur sur `http://localhost:3000/auth/callback`.
+    - Sous **URI de redirection** , définissez la première flèche déroulante sur `Web`, et la valeur sur `http://localhost:3000/auth/callback`.
 
     ![Capture d’écran de la page Inscrire une application](/tutorial/images/aad-register-an-app.png)
 
-1. Choisissez **Inscrire**. Sur la page **didacticiel de Graph node. js** , copiez la valeur de l' **ID d’application (client)** et enregistrez-la, vous en aurez besoin à l’étape suivante.
+1. Choisissez **Inscrire**. Sur la page **didacticielNode.js Graph** , copiez la valeur de l' **ID d’application (client)** et enregistrez-la, vous en aurez besoin à l’étape suivante.
 
     ![Une capture d’écran de l’ID d’application de la nouvelle inscription d'application](/tutorial/images/aad-application-id.png)
 
-1. Sous **Gérer**, sélectionnez **Authentification**. Recherchez la section **Octroi implicite**, puis activez **Jetons d’ID**. Choisissez **Enregistrer**.
-
-    ![Une capture d’écran de la rubrique octroi implicite](/tutorial/images/aad-implicit-grant.png)
-
-1. Sélectionnez **Certificats et secrets** sous **Gérer**. Sélectionnez le bouton **Nouveau secret client**. Entrez une valeur dans **Description**, sélectionnez une des options pour **Expire le**, puis choisissez **Ajouter**.
+1. Sélectionnez **Certificats et secrets** sous **Gérer**. Sélectionnez le bouton **Nouveau secret client**. Entrez une valeur dans **Description** , sélectionnez une des options pour **Expire le** , puis choisissez **Ajouter**.
 
     ![Une capture d’écran de la boîte de dialogue Ajouter une clé secrète client](/tutorial/images/aad-new-client-secret.png)
 
@@ -49,9 +45,9 @@ Si vous n’avez pas de compte Microsoft, vous disposez de deux options pour obt
 
 ## <a name="configure-the-sample"></a>Configurer l’exemple
 
-1. Renommez `.env.example` le fichier `.env`.
+1. Renommez le `example.env` fichier `.env` .
 1. Modifiez le `.env` fichier et effectuez les modifications suivantes.
-    1. Remplacez `YOUR_APP_ID_HERE` par l' **ID d’application** que vous avez obtenu à partir du portail d’inscription des applications.
+    1. Remplacez `YOUR_CLIENT_SECRET_HERE` par l' **ID d’application** que vous avez obtenu à partir du portail d’inscription des applications.
     1. Remplacez `YOUR_APP_PASSWORD_HERE` par le mot de passe que vous avez obtenu à partir du portail d’inscription des applications.
 1. Dans votre interface de ligne de commande (CLI), accédez à ce répertoire et exécutez la commande suivante pour installer les conditions requises.
 

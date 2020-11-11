@@ -1,16 +1,19 @@
 <!-- markdownlint-disable MD002 MD041 -->
 
-Ce didacticiel vous apprend à créer une application Web node. js Express qui utilise l’API Microsoft Graph pour récupérer des informations de calendrier pour un utilisateur.
+Ce didacticiel vous apprend à créer une Node.js application Web Express qui utilise l’API Microsoft Graph pour récupérer des informations de calendrier pour un utilisateur.
 
 > [!TIP]
 > Si vous préférez télécharger simplement le didacticiel terminé, vous pouvez le télécharger de deux manières.
 >
-> - Téléchargez le [démarrage rapide de node. js](https://developer.microsoft.com/graph/quick-start?platform=option-node) pour obtenir du code de travail en quelques minutes.
+> - Téléchargez le [Node.js démarrage rapide](https://developer.microsoft.com/graph/quick-start?platform=option-node) pour obtenir du code de travail en quelques minutes.
 > - Téléchargez ou clonez le [référentiel GitHub](https://github.com/microsoftgraph/msgraph-training-nodeexpressapp).
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-Avant de commencer cette démonstration, [node. js](https://nodejs.org) doit être installé sur votre ordinateur de développement. Si vous n’avez pas node. js, consultez le lien précédent pour obtenir les options de téléchargement.
+Avant de commencer cette démonstration, [Node.js](https://nodejs.org) doit être installé sur votre ordinateur de développement. Si vous n’avez pas Node.js, reportez-vous au lien précédent pour obtenir les options de téléchargement.
+
+> [!NOTE]
+> Les utilisateurs de Windows peuvent avoir besoin d’installer Python et des outils de génération Visual Studio pour prendre en charge les modules NPM qui doivent être compilés à partir de C/C++. Le programme d’installation Node.js sur Windows offre une option permettant d’installer automatiquement ces outils. Vous pouvez également suivre les instructions à l’adresse [https://github.com/nodejs/node-gyp#on-windows](https://github.com/nodejs/node-gyp#on-windows) .
 
 Vous devez également disposer d’un compte Microsoft personnel disposant d’une boîte aux lettres sur Outlook.com ou d’un compte professionnel ou scolaire Microsoft. Si vous n’avez pas de compte Microsoft, vous disposez de deux options pour obtenir un compte gratuit :
 
@@ -18,17 +21,7 @@ Vous devez également disposer d’un compte Microsoft personnel disposant d’u
 - Vous pouvez vous [inscrire au programme pour les développeurs office 365](https://developer.microsoft.com/office/dev-program) pour obtenir un abonnement gratuit à Office 365.
 
 > [!NOTE]
-> Ce didacticiel a été écrit avec le nœud version 12.6.1. Les étapes de ce guide peuvent fonctionner avec d’autres versions, mais cela n’a pas été testé.
-
-## <a name="watch-the-tutorial"></a>Regarder le didacticiel
-
-Ce module a été enregistré et est disponible dans le canal YouTube de développement Office.
-
-<!-- markdownlint-disable MD033 MD034 -->
-<br/>
-
-> [!VIDEO https://www.youtube-nocookie.com/embed/n6q8Cm-pTYY]
-<!-- markdownlint-enable MD033 MD034 -->
+> Ce didacticiel a été écrit avec le nœud version 12.18.4. Les étapes de ce guide peuvent fonctionner avec d’autres versions, mais cela n’a pas été testé.
 
 ## <a name="feedback"></a>Commentaires
 
