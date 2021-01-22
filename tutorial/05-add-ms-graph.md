@@ -1,18 +1,21 @@
 <!-- markdownlint-disable MD002 MD041 -->
 
-Dans cet exercice, vous allez incorporer Microsoft Graph dans l’application. Pour cette application, vous allez utiliser la bibliothèque [Microsoft-Graph-client](https://github.com/microsoftgraph/msgraph-sdk-javascript) pour passer des appels à Microsoft Graph.
+Dans cet exercice, vous allez incorporer Microsoft Graph dans l’application. Pour cette application, vous allez utiliser la bibliothèque [cliente microsoft-graph-client](https://github.com/microsoftgraph/msgraph-sdk-javascript) pour effectuer des appels à Microsoft Graph.
 
 ## <a name="get-calendar-events-from-outlook"></a>Récupérer les événements de calendrier à partir d’Outlook
 
-1. Ouvrez **./graph.js** et ajoutez la fonction suivante dans `module.exports` .
+1. Ouvrez **./graph.js** et ajoutez la fonction suivante à l’intérieur. `module.exports`
 
     :::code language="javascript" source="../demo/graph-tutorial/graph.js" id="GetCalendarViewSnippet":::
 
     Que fait ce code ?
 
-    - L’URL qui sera appelée est `/me/events`.
-    - La `select` méthode limite les champs renvoyés pour chaque événement à ceux que l’affichage utilise réellement.
-    - La `orderby` méthode trie les résultats en fonction de la date et de l’heure de leur création, avec l’élément le plus récent en premier.
+    - L’URL qui sera appelée est `/me/calendarview`.
+    - La `header` méthode ajoute l’en-tête à la demande, ce qui entraîne le retour des heures de début et de fin dans le `Prefer: outlook.timezone` fuseau horaire de l’utilisateur.
+    - La `query` méthode définit les `startDateTime` `endDateTime` paramètres et les paramètres de l’affichage Calendrier.
+    - La méthode limite les champs renvoyés pour chaque événement à ceux que `select` l’affichage utilisera réellement.
+    - La `orderby` méthode trie les résultats par heure de début.
+    - La `top` méthode limite les résultats à 50 événements.
 
 1. Créez un fichier dans le répertoire **./routes** nommé **calendar.js** et ajoutez le code suivant.
 
@@ -106,7 +109,7 @@ Dans cet exercice, vous allez incorporer Microsoft Graph dans l’application. P
     module.exports = router;
     ```
 
-1. Update **./app.js** pour utiliser ce nouvel itinéraire. Ajoutez la ligne suivante **avant** la `var app = express();` ligne.
+1. Mettez **à jour ./app.js** pour utiliser ce nouvel itinéraire. Ajoutez la ligne suivante **avant** la `var app = express();` ligne.
 
     ```javascript
     var calendarRouter = require('./routes/calendar');
@@ -118,7 +121,7 @@ Dans cet exercice, vous allez incorporer Microsoft Graph dans l’application. P
     app.use('/calendar', calendarRouter);
     ```
 
-1. Redémarrez le serveur. Connectez-vous, puis cliquez sur le lien **calendrier** dans la barre de navigation. Si tout fonctionne, vous devriez voir une image mémoire JSON des événements dans le calendrier de l’utilisateur.
+1. Redémarrez le serveur. Connectez-vous et cliquez **sur le lien** Calendrier dans la barre de navigation. Si tout fonctionne, vous devriez voir une image mémoire JSON des événements dans le calendrier de l’utilisateur.
 
 ## <a name="display-the-results"></a>Afficher les résultats
 
@@ -128,18 +131,18 @@ Vous pouvez désormais ajouter une vue pour afficher les résultats de façon pl
 
     :::code language="javascript" source="../demo/graph-tutorial/app.js" id="FormatDateSnippet":::
 
-    Cela implémente une [assistance de guidon](http://handlebarsjs.com/#helpers) pour mettre en forme la date ISO 8601 renvoyée par Microsoft Graph en une solution plus conviviale.
+    Cela implémente un outil d’aide [Handlebars](http://handlebarsjs.com/#helpers) pour mettre en forme la date ISO 8601 renvoyée par Microsoft Graph en quelque chose de plus convivial.
 
-1. Créez un fichier dans le répertoire **./views** nommé **Calendar. BH** et ajoutez le code suivant.
+1. Créez un fichier dans le répertoire **./views** nommé **calendar.hbs** et ajoutez le code suivant.
 
     :::code language="html" source="../demo/graph-tutorial/views/calendar.hbs" id="LayoutSnippet":::
 
     Cela permet de parcourir une collection d’événements et d’ajouter une ligne de tableau pour chacun d’eux.
 
-1. À présent, mettez à jour l’itinéraire dans **./routes/calendar.js** pour utiliser cet affichage. Remplacez l’itinéraire existant par le code suivant.
+1. Maintenant, mettez à jour **l’itinéraire dans ./routes/calendar.js** pour utiliser cet affichage. Remplacez l’itinéraire existant par le code suivant.
 
     :::code language="javascript" source="../demo/graph-tutorial/routes/calendar.js" id="GetRouteSnippet" highlight="33-36,49,51-54,61":::
 
-1. Enregistrez vos modifications, redémarrez le serveur et connectez-vous à l’application. Cliquez sur le lien **calendrier** et l’application doit maintenant afficher un tableau d’événements.
+1. Enregistrez vos modifications, redémarrez le serveur et connectez-vous à l’application. Cliquez sur le **lien Calendrier** et l’application doit maintenant restituer une table des événements.
 
     ![Capture d’écran du tableau des événements](./images/add-msgraph-01.png)
